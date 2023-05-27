@@ -103,13 +103,13 @@ export default function Navbar() {
                 sx={{ width: 75, height: 75 }}
                 image={LogoImg}
               />
-              <Typography
+              {/* <Typography
                 variant="h6"
                 component="div"
                 sx={{ fontWeight: "bold", ml: 2 }}
               >
                 GranColor
-              </Typography>
+              </Typography> */}
             </Grid>
             <Grid item xs={6} container justifyContent="flex-end">
               <IconButton

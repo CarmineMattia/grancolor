@@ -1,0 +1,18 @@
+color palette
+#003B73
+#BFBFBF
+#FF9900
+second choice
+#228B22
+#DC143C
+
+font 
+lato, Montserrat
+
+proje
+
+
+
+import portfolioImg1 from "../../assets/portfolioImg.png";
+import portfolioImg2 from "../../assets/portfolioImg2.png";
+rgba(255, 255, 255, 0.12)

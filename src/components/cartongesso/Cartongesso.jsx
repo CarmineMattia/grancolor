@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import YouTube from "react-youtube";
 import cartongessoImg1 from "../../assets/cartongesso.png";
+import "../../../src/App"; // Assuming you have a CSS file for styles
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -42,13 +43,6 @@ function a11yProps(index) {
 
 export default function Cartongesso() {
   const [value, setValue] = React.useState(0);
-  const opts = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      autoplay: 0,
-    },
-  };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -65,7 +59,7 @@ export default function Cartongesso() {
             objectPosition: "center center",
             width: "100%",
             height: "100%",
-            maxheight: "800px",
+            maxHeight: "800px",
             position: "absolute",
             animation: "zoom 10s infinite linear",
             zIndex: -1,
@@ -96,45 +90,17 @@ export default function Cartongesso() {
             <Tab label="Descrizione" {...a11yProps(1)} />
           </Tabs>
         </Box>
+        <TabPanel value={value} index={0}>
+          <div className="video-responsive">
+            <YouTube videoId="kIbBiU3N7E0" />
+          </div>
+        </TabPanel>
         <TabPanel value={value} index={1}>
           <p>
             Trasforma il tuo spazio con Graziano: dove l'arte del cartongesso
-            incontra l'innovazione. Scopri il loft reinventato - semplicità,
-            stile, sorpresa!
+            incontra l'innovazione. Scopri la semplicitàe lo stile!
           </p>
-          {/* <p>
-            Graziano, un esperto di cartongesso, è stato recentemente coinvolto
-            in un progetto di ristrutturazione di un antico loft situato nel
-            cuore della città. Il cliente, un imprenditore alla ricerca di un
-            moderno spazio di lavoro, si affidò all'esperienza e alla competenza
-            di Graziano per trasformare il loft in un ambiente luminoso e
-            funzionale.
-          </p>
-          <p>
-            Metodico e attento, Graziano ha affrontato il progetto con
-            precisione e dedizione. Ha iniziato tracciando linee, montando
-            profili e installando il cartongesso con una precisione impeccabile.
-            La sua solida esperienza nel settore gli ha permesso di superare con
-            facilità ogni sfida incontrata lungo il percorso.
-          </p>
-          <p>
-            Al termine delle settimane di lavoro, il risultato era stupefacente.
-            Graziano aveva trasformato l'antico loft in uno spazio moderno e
-            funzionale, rispecchiando esattamente le esigenze del cliente. Le
-            pareti e il soffitto erano stati rifiniti a regola d'arte, offrendo
-            una base ideale per la fase successiva di pittura e arredamento.
-          </p>
-          <p>
-            Il cliente rimase estasiato davanti al lavoro di Graziano. La sua
-            abilità nell'utilizzo del cartongesso aveva portato alla luce il
-            pieno potenziale del loft, creando uno spazio di lavoro moderno e
-            accogliente. Questo progetto riflette l'impegno costante di Graziano
-            verso l'eccellenza e la sua passione per il suo mestiere.
-          </p> */}
-        </TabPanel>
-
-        <TabPanel value={value} index={0}>
-          <YouTube videoId="kIbBiU3N7E0" opts={opts} />
+          {/* Other description paragraphs */}
         </TabPanel>
       </Box>
     </div>

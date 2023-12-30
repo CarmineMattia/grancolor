@@ -144,13 +144,13 @@ export default function Navbar() {
                 >
                   Servizi
                 </MenuItem>
-                <MenuItem
+                {/* <MenuItem
                   onClick={handleClose}
                   component={Link}
                   to="/call-to-action"
                 >
                   Contatti
-                </MenuItem>
+                </MenuItem> */}
                 <MenuItem onClick={handleClose} component={Link} to="/gallery">
                   Galleria
                 </MenuItem>

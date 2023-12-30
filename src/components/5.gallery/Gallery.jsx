@@ -48,7 +48,6 @@ export default function Gallery() {
   const [, setSelectedImage] = useState({ before: "", after: "" });
 
   const limitedImageData = itemData.slice(0, 8); // First 8 images for the home screen
-  console.log("Limited Image Data:", limitedImageData);
 
   const fullImageData = itemData; // Full set of images for the gallery page
 
@@ -56,13 +55,14 @@ export default function Gallery() {
   const [imageData, setImageData] = useState([]);
 
   useEffect(() => {
-    console.log("Current Path:", location.pathname); // Add this line for debugging
+    // Use pathname directly in the useEffect dependency array
     if (location.pathname === "/") {
       setImageData(limitedImageData);
     } else {
       setImageData(fullImageData);
     }
-  }, [fullImageData, limitedImageData, location.pathname]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const handleNextImage = () => {
@@ -94,7 +94,7 @@ export default function Gallery() {
     <Box
       sx={{
         display: "flex",
-        padding: "3rem",
+        padding: "1rem",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
@@ -106,7 +106,7 @@ export default function Gallery() {
       </Typography>
       <ImageList
         sx={{
-          width: { xs: 300, md: 900 },
+          width: { xs: 350, md: 900 },
           height: { xs: 450, md: 850 },
           rowHeight: 164,
         }}

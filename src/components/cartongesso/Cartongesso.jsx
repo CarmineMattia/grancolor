@@ -65,7 +65,7 @@ export default function Cartongesso() {
             objectPosition: "center center",
             width: "100%",
             height: "100%",
-            maxHeight: "800px",
+            maxheight: "800px",
             position: "absolute",
             animation: "zoom 10s infinite linear",
             zIndex: -1,
@@ -92,12 +92,17 @@ export default function Cartongesso() {
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            <Tab label="Descrizione" {...a11yProps(0)} />
-            <Tab label="Video" {...a11yProps(1)} />
+            <Tab label="Video" {...a11yProps(0)} />
+            <Tab label="Descrizione" {...a11yProps(1)} />
           </Tabs>
         </Box>
-        <TabPanel value={value} index={0}>
+        <TabPanel value={value} index={1}>
           <p>
+            Trasforma il tuo spazio con Graziano: dove l'arte del cartongesso
+            incontra l'innovazione. Scopri il loft reinventato - semplicità,
+            stile, sorpresa!
+          </p>
+          {/* <p>
             Graziano, un esperto di cartongesso, è stato recentemente coinvolto
             in un progetto di ristrutturazione di un antico loft situato nel
             cuore della città. Il cliente, un imprenditore alla ricerca di un
@@ -125,11 +130,11 @@ export default function Cartongesso() {
             pieno potenziale del loft, creando uno spazio di lavoro moderno e
             accogliente. Questo progetto riflette l'impegno costante di Graziano
             verso l'eccellenza e la sua passione per il suo mestiere.
-          </p>
+          </p> */}
         </TabPanel>
 
-        <TabPanel value={value} index={1}>
-          <YouTube videoId="KvZwyE2fztY" opts={opts} />
+        <TabPanel value={value} index={0}>
+          <YouTube videoId="kIbBiU3N7E0" opts={opts} />
         </TabPanel>
       </Box>
     </div>

@@ -1,110 +1,87 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid, Link, Divider } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Logo from "../../assets/logoGrancolor.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const handleSocialMediaClick = (platform) => {
-    // Handle the click event for each social media platform
-    switch (platform) {
-      case "facebook":
-        // Handle Facebook click event
-        break;
-      case "instagram":
-        // Handle Instagram click event
-        break;
-      case "whatsapp":
-        // Handle WhatsApp click event
-        break;
-      case "email":
-        // Handle Email click event
-        break;
-      default:
-        break;
-    }
-  };
-
   return (
     <Box
       component="footer"
       sx={{
-        // backgroundColor: "#003B73",
-        padding: "2rem",
-        textAlign: "center",
-        color: "#FFFFFF",
+        padding: "3rem",
+        color: "#666",
+        borderTop: "1px solid #ddd",
+        // mt: "4rem",
       }}
     >
-      <Box
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      <Grid container spacing={4} justifyContent="center" alignItems="center">
+        <Grid item xs={12} sm={4}>
+          <Box textAlign="center">
+            <img
+              src={Logo}
+              alt="Company Logo"
+              style={{ height: "80px", marginBottom: "1rem" }}
+            />
+            <Typography variant="h6" gutterBottom>
+              Gran Color
+            </Typography>
+            <Typography variant="body2">Bringing colors to life.</Typography>
+          </Box>
+        </Grid>
+
+        <Grid item xs={12} sm={4}>
+          <Typography variant="subtitle1" gutterBottom>
+            Contattaci
+          </Typography>
+          <Typography variant="body2">Telefono: +39 342 924 4022</Typography>
+          <Typography variant="body2">
+            Email: grazianograncolor@gmail.com
+          </Typography>
+          <Typography variant="body2">
+            Indirizzo: Reggio nell' Emilia, Italia
+          </Typography>
+        </Grid>
+
+        <Grid item xs={12} sm={4}>
+          <Typography variant="subtitle1" gutterBottom>
+            Follow Us
+          </Typography>
+          <Box display="flex" justifyContent="">
+            <Link
+              href="https://www.facebook.com/profile.php?id=61555270764555"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FacebookIcon sx={{ color: "#1877F2", marginRight: "10px" }} />
+            </Link>
+            <Link
+              href="https://www.instagram.com/grazianograncolor/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <InstagramIcon sx={{ color: "#E1306C", marginRight: "10px" }} />
+            </Link>
+            <Link
+              href="https://api.whatsapp.com/send?phone=+393429244022"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <WhatsAppIcon sx={{ color: "#25D366" }} />
+            </Link>
+          </Box>
+        </Grid>
+      </Grid>
+
+      <Divider sx={{ my: 4 }} />
+
+      <Typography
+        variant="body2"
+        sx={{ textAlign: "center", fontSize: "14px" }}
       >
-        <img
-          src={Logo}
-          alt="Company Logo"
-          style={{ height: "100px", marginRight: "0.5rem" }}
-        />
-        <Typography variant="h6" sx={{ fontWeight: 600 }}>
-          Gran Color
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: "1rem",
-        }}
-      >
-        <Typography variant="body2" sx={{ marginRight: "1rem" }}>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FacebookIcon
-              onClick={() => handleSocialMediaClick("facebook")}
-              sx={{ color: "#1877F2" }}
-            />
-          </a>
-        </Typography>
-        <Typography variant="body2" sx={{ marginRight: "1rem" }}>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <InstagramIcon
-              onClick={() => handleSocialMediaClick("instagram")}
-              sx={{ color: "#E1306C" }}
-            />
-          </a>
-        </Typography>
-        <Typography variant="body2" sx={{ marginRight: "1rem" }}>
-          <a
-            href="https://api.whatsapp.com/send?phone=+393429244022"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <WhatsAppIcon
-              onClick={() => handleSocialMediaClick("whatsapp")}
-              sx={{ color: "#25D366" }}
-            />
-          </a>
-        </Typography>
-        <Typography variant="body2">
-          <a href="mailto:grazianorapisarda.91@hotmail.it">
-            <MailOutlineIcon
-              onClick={() => handleSocialMediaClick("email")}
-              sx={{ color: "#FFFFFF" }}
-            />
-          </a>
-        </Typography>
-      </Box>
-      <Typography variant="body2" sx={{ marginTop: "1rem", fontSize: "14px" }}>
         &copy; {currentYear} All rights reserved to Carmine Mattia Castello
       </Typography>
     </Box>

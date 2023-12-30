@@ -45,11 +45,19 @@ export default function Navbar() {
                 <Button variant="text" color="inherit" component={Link} to="/">
                   Home
                 </Button>
-                <Button
+                {/* <Button
                   variant="text"
                   color="inherit"
                   component={Link}
                   to="/services"
+                >
+                  Servizi
+                </Button> */}
+                <Button
+                  variant="text"
+                  color="inherit"
+                  component={Link}
+                  to="/portfolio"
                 >
                   Servizi
                 </Button>
@@ -57,26 +65,18 @@ export default function Navbar() {
                   variant="text"
                   color="inherit"
                   component={Link}
-                  to="/portfolio"
-                >
-                  Portfolio
-                </Button>
-                <Button
-                  variant="text"
-                  color="inherit"
-                  component={Link}
-                  to="/portfolio"
+                  to="/gallery"
                 >
                   Galleria
                 </Button>
-                <Button
+                {/* <Button
                   variant="text"
                   color="inherit"
                   component={Link}
-                  to="/gallery"
+                  to="/contatti"
                 >
                   Contatti
-                </Button>
+                </Button> */}
               </Box>
             </Grid>
             <Grid item xs={4} container justifyContent="flex-end">
@@ -134,15 +134,15 @@ export default function Navbar() {
                 <MenuItem onClick={handleClose} component={Link} to="/">
                   Home
                 </MenuItem>
-                <MenuItem onClick={handleClose} component={Link} to="/services">
+                {/* <MenuItem onClick={handleClose} component={Link} to="/services">
                   Servizi
-                </MenuItem>
+                </MenuItem> */}
                 <MenuItem
                   onClick={handleClose}
                   component={Link}
                   to="/portfolio"
                 >
-                  Portfolio
+                  Servizi
                 </MenuItem>
                 <MenuItem
                   onClick={handleClose}

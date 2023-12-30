@@ -14,9 +14,9 @@ const CardComponent = ({
   buttonText,
 }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ minWidth: 350 }}>
       <CardActionArea onClick={handleCardClick}>
-        <CardMedia component="img" height="140" image={imgSrc} alt={title} />
+        <CardMedia component="img" maxheight="40" image={imgSrc} alt={title} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}

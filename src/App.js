@@ -7,7 +7,7 @@ import { Element } from "react-scroll";
 
 import Navbar from "./components/1.navbar/Navbar";
 import HeroSection from "./components/2.hero/Hero";
-import ServicesSection from "./components/3.services/Services";
+// import ServicesSection from "./components/3.services/Services";
 import PortfolioSection from "./components/4.portfolio/Portfolio";
 import Gallery from "./components/5.gallery/Gallery";
 import Testimonials from "./components/6.testimonial/Testimonials";
@@ -20,12 +20,12 @@ import Cartongesso from "./components/cartongesso/Cartongesso";
 
 const theme = createTheme({
   typography: {
-    fontFamily: "Montserrat, sans-serif",
+    fontFamily: "Arapey",
     body1: {
-      fontFamily: "Lato, sans-serif",
+      fontFamily: "Arapey, serif",
     },
     body2: {
-      fontFamily: "Lato, sans-serif",
+      fontFamily: "Arapey, serif",
     },
   },
   palette: {
@@ -41,7 +41,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/catalogoDecori" element={<Catalog />} />
-          <Route path="/services" element={<ServicesSection />} />
+          {/* <Route path="/services" element={<ServicesSection />} /> */}
           <Route path="/portfolio" element={<PortfolioSection />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/testimonials" element={<Testimonials />} />
@@ -62,9 +62,9 @@ function Home() {
   return (
     <>
       <HeroSection />
-      <Element name="services">
+      {/* <Element name="services">
         <ServicesSection />
-      </Element>
+      </Element> */}
       <Element name="portfolio">
         <PortfolioSection />
       </Element>

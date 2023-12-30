@@ -15,11 +15,7 @@ const CallToAction = () => {
       <Typography variant="h4" sx={{ marginBottom: "1rem" }}>
         Domande o preventivo?
       </Typography>
-      <Typography variant="body1" sx={{ marginBottom: "2rem" }}>
-        Siamo qui per aiutarti! Contattaci per ottenere risposte alle tue
-        domande o per richiedere un preventivo gratuito per i nostri servizi di
-        pittura e imbiancatura.
-      </Typography>
+      <Typography variant="body1" sx={{ marginBottom: "2rem" }}></Typography>
       <Button
         variant="contained"
         color="secondary"
@@ -31,18 +27,18 @@ const CallToAction = () => {
           },
         }}
         onClick={() => {
-          window.location.href = "tel:+393429244022";
+          window.location.href = "mailto:grazianograncolor@gmail.com";
         }}
       >
-        CHIAMA
+        E-MAIL
       </Button>
 
       <Box sx={{ marginTop: "2rem" }}>
         <Typography variant="body2">
-          Seguici su Instagram: @gran_color
+          Seguici su Instagram: @grazianograncolor
         </Typography>
         <Typography variant="body2">
-          Email: grazianorapisarda.91@hotmail.it
+          Email: grazianograncolor@gmail.com
         </Typography>
         {/* Add more contact details as needed */}
       </Box>

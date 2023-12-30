@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import heroImg from "../../assets/heroImg1.png";
+import heroImg from "../../assets/graziano-hero.png";
 import { Link } from "react-scroll";
 
 const HeroSection = () => {
@@ -8,7 +8,7 @@ const HeroSection = () => {
     <Box
       component="section"
       sx={{
-        height: "80vh",
+        height: "100vh",
         display: "flex",
         fontFamily: "Montserrat, sans-serif",
         flexDirection: "column",

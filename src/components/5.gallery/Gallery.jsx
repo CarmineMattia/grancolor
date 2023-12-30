@@ -1,10 +1,95 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { Typography } from "@mui/material";
+import { Typography, useTheme, useMediaQuery } from "@mui/material";
+import GalleryModal from "./GalleryModal";
+//import imgs
+import img2 from "../../assets/gallery/5E7D13B7_IMG_0382.jpg";
+import img4 from "../../assets/gallery/7A6A3350_IMG_1115.jpg";
+import img6 from "../../assets/gallery/8D96AF45_IMG_1068.jpg";
+import img7 from "../../assets/gallery/9BD5CAA2_IMG_1119.jpg";
+import img8 from "../../assets/gallery/9D20A426_IMG_1379.JPG";
+import img11 from "../../assets/gallery/46F698CD_IMG_0833.JPG";
+import img12 from "../../assets/gallery/77BB8B91_IMG_1368.jpg";
+import img13 from "../../assets/gallery/78B00545_IMG_1988 (1).JPG";
+import img15 from "../../assets/gallery/94CF15F3_IMG_0903.jpg";
+import img18 from "../../assets/gallery/3457F45B_IMG_0873.JPG";
+import img20 from "../../assets/gallery/186199A0_IMG_0734.JPG";
+import img21 from "../../assets/gallery/768085A5_IMG_1097.jpg";
+import img22 from "../../assets/gallery/925011BA_IMG_1418.JPG";
+import img23 from "../../assets/gallery/A0ADD949_IMG_0835.JPG";
+import img24 from "../../assets/gallery/A2C79955_IMG_0502.JPG";
+import img25 from "../../assets/gallery/A8B8DBED_IMG_0768.jpg";
+import img26 from "../../assets/gallery/A22B3365_IMG_0507.jpg";
+import img27 from "../../assets/gallery/AA0E733C_IMG_0469 (1).jpg";
+import img30 from "../../assets/gallery/AB5645A8_IMG_0767.jpg";
+import img33 from "../../assets/gallery/B40314E2_IMG_0828.jpg";
+import img34 from "../../assets/gallery/C2B42011_IMG_1457.jpg";
+import img35 from "../../assets/gallery/C083C2CD_IMG_0872.JPG";
+import img36 from "../../assets/gallery/CDF3F314_IMG_0870.jpg";
+import img38 from "../../assets/gallery/D6AF4B5C_IMG_0868.jpg";
+import img39 from "../../assets/gallery/D32AAF55_IMG_1378.jpg";
+import img40 from "../../assets/gallery/E33B6381_IMG_1380.JPG";
+import img42 from "../../assets/gallery/EDEF0C1F_IMG_0748.jpg";
+import img43 from "../../assets/gallery/IMG-20230812-WA0002.jpeg";
+import img44 from "../../assets/gallery/IMG20230720120321.jpg";
+import img48 from "../../assets/gallery/IMG20230722113237.jpg";
+import img49 from "../../assets/gallery/IMG20230722113256.jpg";
+import img50 from "../../assets/gallery/IMG20230808162129.jpg";
 
 export default function Gallery() {
+  const theme = useTheme();
+  const isXSmall = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMedium = useMediaQuery(theme.breakpoints.up("md"));
+  const [modalOpen, setModalOpen] = useState(false);
+  const [, setSelectedImage] = useState({ before: "", after: "" });
+
+  const limitedImageData = itemData.slice(0, 8); // First 8 images for the home screen
+  console.log("Limited Image Data:", limitedImageData);
+
+  const fullImageData = itemData; // Full set of images for the gallery page
+
+  const location = useLocation();
+  const [imageData, setImageData] = useState([]);
+
+  useEffect(() => {
+    console.log("Current Path:", location.pathname); // Add this line for debugging
+    if (location.pathname === "/") {
+      setImageData(limitedImageData);
+    } else {
+      setImageData(fullImageData);
+    }
+  }, [fullImageData, limitedImageData, location.pathname]);
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const handleNextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % itemData.length);
+  };
+
+  const handlePreviousImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex - 1 + itemData.length) % itemData.length
+    );
+  };
+  const handleImageClick = (item, index) => {
+    setSelectedImage({ before: item.before, after: item.after });
+    setCurrentImageIndex(index);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
+  const getCols = () => {
+    if (isXSmall) return 2;
+    if (isMedium) return 4;
+    return 3;
+  };
+
   return (
     <Box
       sx={{
@@ -19,71 +104,216 @@ export default function Gallery() {
       <Typography variant="h4" style={{ paddingBottom: "1rem" }}>
         Galleria
       </Typography>
-      <Box sx={{ overflowY: "" }}>
-        <ImageList variant="masonry" cols={3} gap={8}>
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-      </Box>
+      <ImageList
+        sx={{
+          width: { xs: 300, md: 900 },
+          height: { xs: 450, md: 850 },
+          rowHeight: 164,
+        }}
+        cols={getCols()}
+      >
+        {imageData.map((item, index) => (
+          <ImageListItem
+            key={item.img}
+            onClick={() => handleImageClick(item, index)}
+          >
+            <img
+              srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+              alt={item.title}
+              loading="lazy"
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+      <GalleryModal
+        open={modalOpen}
+        handleClose={handleCloseModal}
+        beforeImage={imageData[currentImageIndex]?.before}
+        afterImage={imageData[currentImageIndex]?.after}
+        onNext={handleNextImage}
+        onPrevious={handlePreviousImage}
+      />
     </Box>
   );
 }
 
 const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1549388604-817d15aa0110",
-    title: "Bed",
+    img: img34,
+    title: "img34",
+    before: img34,
+    after: img34,
   },
   {
-    img: "https://images.unsplash.com/photo-1525097487452-6278ff080c31",
-    title: "Books",
+    img: img24,
+    title: "img24",
+    before: img24,
+    after: img24,
+  },
+
+  {
+    img: img2,
+    title: "img2",
+    before: img2,
+    after: img2,
   },
   {
-    img: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6",
-    title: "Sink",
+    img: img26,
+    title: "img26",
+    before: img26,
+    after: img26,
   },
   {
-    img: "https://images.unsplash.com/photo-1563298723-dcfebaa392e3",
-    title: "Kitchen",
+    img: img27,
+    title: "img27",
+    before: img27,
+    after: img27,
+  },
+
+  {
+    img: img18,
+    title: "img18",
+    before: img18,
+    after: img18,
+  },
+
+  {
+    img: img12,
+    title: "img12",
+    before: img12,
+    after: img12,
   },
   {
-    img: "https://images.unsplash.com/photo-1588436706487-9d55d73a39e3",
-    title: "Blinds",
+    img: img50,
+    title: "img50",
+    before: img50,
+    after: img50,
+  },
+
+  {
+    img: img42,
+    title: "img42",
+    before: img42,
+    after: img23,
   },
   {
-    img: "https://images.unsplash.com/photo-1574180045827-681f8a1a9622",
-    title: "Chairs",
+    img: img11,
+    title: "img11",
+    before: img11,
+    after: img20,
+  },
+
+  {
+    img: img15,
+    title: "img15",
+    before: img15,
+    after: img15,
+  },
+
+  {
+    img: img13,
+    title: "img13",
+    before: img13,
+    after: img13,
   },
   {
-    img: "https://images.unsplash.com/photo-1530731141654-5993c3016c77",
-    title: "Laptop",
+    img: img21,
+    title: "img21",
+    before: img6,
+    after: img21,
   },
   {
-    img: "https://images.unsplash.com/photo-1481277542470-605612bd2d61",
-    title: "Doors",
+    img: img25,
+    title: "img25",
+    before: img25,
+    after: img25,
   },
   {
-    img: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7",
-    title: "Coffee",
+    img: img30,
+    title: "img30",
+    before: img30,
+    after: img30,
   },
   {
-    img: "https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee",
-    title: "Storage",
+    img: img33,
+    title: "img33",
+    before: img33,
+    after: img33,
+  },
+
+  {
+    img: img35,
+    title: "img35",
+    before: img35,
+    after: img35,
   },
   {
-    img: "https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62",
-    title: "Candle",
+    img: img36,
+    title: "img36",
+    before: img36,
+    after: img36,
+  },
+
+  {
+    img: img38,
+    title: "img38",
+    before: img38,
+    after: img38,
   },
   {
-    img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
-    title: "Coffee table",
+    img: img8,
+    title: "img8",
+    before: img8,
+    after: img40,
+  },
+  {
+    img: img22,
+    title: "img22",
+    before: img22,
+    after: img22,
+  },
+  {
+    img: img39,
+    title: "img39",
+    before: img39,
+    after: img39,
+  },
+  {
+    img: img48,
+    title: "img48",
+    before: img48,
+    after: img48,
+  },
+  {
+    img: img44,
+    title: "img44",
+    before: img44,
+    after: img44,
+  },
+  {
+    img: img49,
+    title: "img49",
+    before: img49,
+    after: img49,
+  },
+
+  {
+    img: img4,
+    title: "img4",
+    before: img4,
+    after: img4,
+  },
+  {
+    img: img7,
+    title: "img7",
+    before: img7,
+    after: img7,
+  },
+  {
+    img: img43,
+    title: "img43",
+    before: img43,
+    after: img43,
   },
 ];

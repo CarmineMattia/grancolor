@@ -11,7 +11,7 @@ import img2 from "../../assets/gallery/5E7D13B7_IMG_0382.jpg";
 import img4 from "../../assets/gallery/7A6A3350_IMG_1115.jpg";
 import img6 from "../../assets/gallery/8D96AF45_IMG_1068.jpg";
 import img7 from "../../assets/gallery/9BD5CAA2_IMG_1119.jpg";
-import img8 from "../../assets/gallery/9D20A426_IMG_1379.jpg";
+import img8 from "../../assets/gallery/9D20A426_IMG_1379.JPG";
 import img11 from "../../assets/gallery/46F698CD_IMG_0833.jpg";
 import img12 from "../../assets/gallery/77BB8B91_IMG_1368.jpg";
 import img13 from "../../assets/gallery/78B00545_IMG_1988 (1).jpg";

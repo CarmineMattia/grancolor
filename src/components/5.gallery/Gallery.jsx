@@ -6,33 +6,33 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { Typography, useTheme, useMediaQuery } from "@mui/material";
 import GalleryModal from "./GalleryModal";
-//import imgs
+// Import img names
 import img2 from "../../assets/gallery/5E7D13B7_IMG_0382.jpg";
 import img4 from "../../assets/gallery/7A6A3350_IMG_1115.jpg";
 import img6 from "../../assets/gallery/8D96AF45_IMG_1068.jpg";
 import img7 from "../../assets/gallery/9BD5CAA2_IMG_1119.jpg";
-import img8 from "../../assets/gallery/9D20A426_IMG_1379.JPG";
-import img11 from "../../assets/gallery/46F698CD_IMG_0833.JPG";
+import img8 from "../../assets/gallery/9D20A426_IMG_1379.jpg";
+import img11 from "../../assets/gallery/46F698CD_IMG_0833.jpg";
 import img12 from "../../assets/gallery/77BB8B91_IMG_1368.jpg";
-import img13 from "../../assets/gallery/78B00545_IMG_1988 (1).JPG";
+import img13 from "../../assets/gallery/78B00545_IMG_1988 (1).jpg";
 import img15 from "../../assets/gallery/94CF15F3_IMG_0903.jpg";
-import img18 from "../../assets/gallery/3457F45B_IMG_0873.JPG";
-import img20 from "../../assets/gallery/186199A0_IMG_0734.JPG";
+import img18 from "../../assets/gallery/3457F45B_IMG_0873.jpg";
+import img20 from "../../assets/gallery/186199A0_IMG_0734.jpg";
 import img21 from "../../assets/gallery/768085A5_IMG_1097.jpg";
-import img22 from "../../assets/gallery/925011BA_IMG_1418.JPG";
-import img23 from "../../assets/gallery/A0ADD949_IMG_0835.JPG";
-import img24 from "../../assets/gallery/A2C79955_IMG_0502.JPG";
+import img22 from "../../assets/gallery/925011BA_IMG_1418.jpg";
+import img23 from "../../assets/gallery/A0ADD949_IMG_0835.jpg";
+// import img24 from "../../assets/gallery/A2C79955_IMG_0502.jpg";
 import img25 from "../../assets/gallery/A8B8DBED_IMG_0768.jpg";
 import img26 from "../../assets/gallery/A22B3365_IMG_0507.jpg";
-import img27 from "../../assets/gallery/AA0E733C_IMG_0469 (1).jpg";
+import img27 from "../../assets/gallery/AA0E733C_IMG_0469.jpg";
 import img30 from "../../assets/gallery/AB5645A8_IMG_0767.jpg";
 import img33 from "../../assets/gallery/B40314E2_IMG_0828.jpg";
 import img34 from "../../assets/gallery/C2B42011_IMG_1457.jpg";
-import img35 from "../../assets/gallery/C083C2CD_IMG_0872.JPG";
+import img35 from "../../assets/gallery/C083C2CD_IMG_0872.jpg";
 import img36 from "../../assets/gallery/CDF3F314_IMG_0870.jpg";
 import img38 from "../../assets/gallery/D6AF4B5C_IMG_0868.jpg";
 import img39 from "../../assets/gallery/D32AAF55_IMG_1378.jpg";
-import img40 from "../../assets/gallery/E33B6381_IMG_1380.JPG";
+import img40 from "../../assets/gallery/E33B6381_IMG_1380.jpg";
 import img42 from "../../assets/gallery/EDEF0C1F_IMG_0748.jpg";
 import img43 from "../../assets/gallery/IMG-20230812-WA0002.jpeg";
 import img44 from "../../assets/gallery/IMG20230720120321.jpg";
@@ -146,10 +146,10 @@ const itemData = [
     after: img34,
   },
   {
-    img: img24,
-    title: "img24",
-    before: img24,
-    after: img24,
+    img: img18,
+    title: "img18",
+    before: img18,
+    after: img18,
   },
 
   {
@@ -171,12 +171,12 @@ const itemData = [
     after: img27,
   },
 
-  {
-    img: img18,
-    title: "img18",
-    before: img18,
-    after: img18,
-  },
+  // {
+  //   img: img18,
+  //   title: "img18",
+  //   before: img18,
+  //   after: img18,
+  // },
 
   {
     img: img12,

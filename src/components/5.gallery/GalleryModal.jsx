@@ -5,6 +5,7 @@ import ReactCompareImage from "react-compare-image";
 import { Typography, useTheme, useMediaQuery, IconButton } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import CloseIcon from "@mui/icons-material/Close";
 
 const GalleryModal = ({
   open,
@@ -38,6 +39,13 @@ const GalleryModal = ({
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
+        <IconButton
+          onClick={handleClose}
+          style={{ position: "absolute", right: 8, top: 8 }} // Position the close button
+          aria-label="close"
+        >
+          <CloseIcon />
+        </IconButton>
         <Typography id="modal-modal-title" variant="h6" component="h2">
           {/* Prima - Dopo */}
         </Typography>

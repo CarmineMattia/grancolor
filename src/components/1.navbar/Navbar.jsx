@@ -130,6 +130,13 @@ export default function Navbar() {
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
+                sx={{
+                  // Apply styles to the menu items for small screens
+                  ".MuiMenuItem-root": {
+                    fontSize: { xs: "2.2rem", sm: "1rem" }, // Larger font size on small screens
+                    padding: { xs: "1rem", sm: "0.5rem" }, // More padding on small screens
+                  },
+                }}
               >
                 <MenuItem onClick={handleClose} component={Link} to="/">
                   Home

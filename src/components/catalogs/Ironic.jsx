@@ -87,20 +87,20 @@ const Ironic = () => {
           <WaterDropIcon sx={{ mr: 1 }} /> Diluizione
         </Typography>
         <p>
-          Ironic fondo: dilute with 25-35% of water, for both the first and
-          second layer.
+          Fondo Ironico: diluire con il 25-35% di acqua, sia per il primo che
+          per secondo strato.
         </p>
 
         <Typography variant="h6" sx={{ display: "flex", alignItems: "center" }}>
           <OpacityIcon sx={{ mr: 1 }} /> Resa
         </Typography>
         <p>
-          Ironic fondo: 5-8 m2/l in two layers; ironic liquido antichizzante:
-          8-12 m2/l in two layers.
+          Fondo Ironic: 5-8 mq/l in due strati; ironico liquido antichizzante:
+          8-12 mq/l in due strati.
         </p>
 
         <Typography variant="h6" sx={{ display: "flex", alignItems: "center" }}>
-          <AirIcon sx={{ mr: 1 }} /> Indoor air quality
+          <AirIcon sx={{ mr: 1 }} /> Qualità dell'aria interna
         </Typography>
         <p>A+</p>
       </TabPanel>

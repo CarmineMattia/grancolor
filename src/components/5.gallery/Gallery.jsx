@@ -65,14 +65,42 @@ export default function Gallery() {
   }, [location.pathname]);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // const handleNextImage = () => {
+  //   setCurrentImageIndex((prevIndex) => (prevIndex + 1) % itemData.length);
+  //   setCurrentImageIndex((prevIndex) => (prevIndex + 1) % itemData.length);
+  // };
+
+  // const handlePreviousImage = () => {
+  //   setCurrentImageIndex(
+  //     (prevIndex) => (prevIndex - 1 + itemData.length) % itemData.length
+  //   );
+  // };
   const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % itemData.length);
+    setCurrentImageIndex((prevIndex) => {
+      // Check if the current route is the home page
+      if (location.pathname === "/") {
+        // Navigate only within the first 8 images for the home page
+        return (prevIndex + 1) % limitedImageData.length;
+      } else {
+        // Navigate within the full set of images for the gallery page
+        return (prevIndex + 1) % fullImageData.length;
+      }
+    });
   };
 
   const handlePreviousImage = () => {
-    setCurrentImageIndex(
-      (prevIndex) => (prevIndex - 1 + itemData.length) % itemData.length
-    );
+    setCurrentImageIndex((prevIndex) => {
+      // Check if the current route is the home page
+      if (location.pathname === "/") {
+        // Navigate only within the first 8 images for the home page
+        return (
+          (prevIndex - 1 + limitedImageData.length) % limitedImageData.length
+        );
+      } else {
+        // Navigate within the full set of images for the gallery page
+        return (prevIndex - 1 + fullImageData.length) % fullImageData.length;
+      }
+    });
   };
   const handleImageClick = (item, index) => {
     setSelectedImage({ before: item.before, after: item.after });

@@ -2,7 +2,7 @@
 import React from "react";
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import portfolioImg1 from "../../assets/card1.jpg";
-import portfolioImg2 from "../../assets/card2.jpg";
+import portfolioImg2 from "../../assets/portfolio-card-1.webp";
 import CardComponent from "./CardComponent";
 import { useNavigate } from "react-router-dom";
 
@@ -76,7 +76,7 @@ const Portfolio = () => {
           alignItems: "center",
           justifyContent: "center",
           gap: "2rem",
-          width: "100%",
+          width: "50%",
         }}
       >
         <CardComponent
@@ -88,6 +88,7 @@ const Portfolio = () => {
         />
         <CardComponent
           imgSrc={portfolioImg2}
+          sx={{ maxWidth: 350 }}
           title="Cartongesso"
           description={description2}
           handleCardClick={() => handleCardClick(1)}

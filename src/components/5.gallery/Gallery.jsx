@@ -196,14 +196,14 @@ const itemData = [
     img: img27,
     title: "img27",
     before: img27,
-    after: img27,
+    after: img36,
   },
 
   {
     img: img18,
     title: "img18",
     before: img18,
-    after: img18,
+    after: img38,
   },
 
   {
@@ -226,18 +226,18 @@ const itemData = [
     after: img23,
   },
   {
-    img: img11,
-    title: "img11",
-    before: img11,
-    after: img20,
+    img: img20,
+    title: "img20",
+    before: img20,
+    after: img11,
   },
 
-  {
-    img: img15,
-    title: "img15",
-    before: img15,
-    after: img15,
-  },
+  // {
+  //   img: img15,
+  //   title: "img15",
+  //   before: img15,
+  //   after: img15,
+  // },
 
   {
     img: img13,
@@ -251,17 +251,17 @@ const itemData = [
     before: img6,
     after: img21,
   },
-  {
-    img: img25,
-    title: "img25",
-    before: img25,
-    after: img25,
-  },
+  // {
+  //   img: img25,
+  //   title: "img25",
+  //   before: img25,
+  //   after: img25,
+  // },
   {
     img: img30,
     title: "img30",
     before: img30,
-    after: img30,
+    after: img25,
   },
   {
     img: img33,
@@ -270,25 +270,25 @@ const itemData = [
     after: img33,
   },
 
-  {
-    img: img35,
-    title: "img35",
-    before: img35,
-    after: img35,
-  },
-  {
-    img: img36,
-    title: "img36",
-    before: img36,
-    after: img36,
-  },
+  // {
+  //   img: img35,
+  //   title: "img35",
+  //   before: img35,
+  //   after: img35,
+  // },
+  // {
+  //   img: img36,
+  //   title: "img36",
+  //   before: img36,
+  //   after: img36,
+  // },
 
-  {
-    img: img38,
-    title: "img38",
-    before: img38,
-    after: img38,
-  },
+  // {
+  //   img: img38,
+  //   title: "img38",
+  //   before: img38,
+  //   after: img38,
+  // },
   {
     img: img8,
     title: "img8",
@@ -301,42 +301,42 @@ const itemData = [
     before: img22,
     after: img22,
   },
-  {
-    img: img39,
-    title: "img39",
-    before: img39,
-    after: img39,
-  },
-  {
-    img: img48,
-    title: "img48",
-    before: img48,
-    after: img48,
-  },
-  {
-    img: img44,
-    title: "img44",
-    before: img44,
-    after: img44,
-  },
+  // {
+  //   img: img39,
+  //   title: "img39",
+  //   before: img39,
+  //   after: img39,
+  // },
+  // {
+  //   img: img48,
+  //   title: "img48",
+  //   before: img48,
+  //   after: img48,
+  // },
+  // {
+  //   img: img44,
+  //   title: "img44",
+  //   before: img44,
+  //   after: img44,
+  // },
   {
     img: img49,
     title: "img49",
     before: img49,
-    after: img49,
+    after: img44,
   },
 
-  {
-    img: img4,
-    title: "img4",
-    before: img4,
-    after: img4,
-  },
+  // {
+  //   img: img4,
+  //   title: "img4",
+  //   before: img4,
+  //   after: img4,
+  // },
   {
     img: img7,
     title: "img7",
     before: img7,
-    after: img7,
+    after: img4,
   },
   {
     img: img43,

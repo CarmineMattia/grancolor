@@ -16,6 +16,7 @@ import Footer from "./components/footer/Footer";
 import Catalog from "./components/catalogs/CatalogoDecori";
 import CalceCruda from "./components/catalogs/CalceCruda";
 import Mirror from "./components/catalogs/Mirror";
+import Ironic from "./components/catalogs/Ironic";
 import Cartongesso from "./components/cartongesso/Cartongesso";
 
 const theme = createTheme({
@@ -47,6 +48,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/call-to-action" element={<CallToAction />} />
           <Route path="/calce-cruda" element={<CalceCruda />} />
+          <Route path="/Ironic" element={<Ironic />} />
           <Route path="/mirror" element={<Mirror />} />
           <Route path="/cartongesso" element={<Cartongesso />} />
 

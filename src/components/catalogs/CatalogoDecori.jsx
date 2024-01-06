@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 // Import images
 import calceCrudaImg from "../../assets/calceCruda1.png";
 import mirror1Img from "../../assets/mirror1.jpg";
+import ironicImg from "../../assets/ironic1.png";
 
 const CatalogoDecori = () => {
   const theme = useTheme();
@@ -19,6 +20,9 @@ const CatalogoDecori = () => {
     } else if (index === 1) {
       // Handle card click for the second card
       navigate("/Mirror");
+    } else if (index === 2) {
+      // Handle card click for the second card
+      navigate("/Ironic");
     }
   };
 
@@ -53,12 +57,20 @@ const CatalogoDecori = () => {
           buttonText="vedi colori"
           handleCardClick={() => handleCardClick(0)}
         />
+
         <CardComponent
           imgSrc={mirror1Img}
           title="Mirror"
           description="Rifletti l'eleganza con una finitura lussuosa."
           buttonText="vedi colori"
           handleCardClick={() => handleCardClick(1)}
+        />
+        <CardComponent
+          imgSrc={ironicImg}
+          title="Ironic"
+          description="Rivestimento decorativo con effetto ruggine, per interni ed esterni"
+          buttonText="vedi colori"
+          handleCardClick={() => handleCardClick(2)}
         />
         {/* <CardComponent
           // imgSrc={pietra1Img}

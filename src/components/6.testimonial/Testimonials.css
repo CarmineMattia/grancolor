@@ -154,3 +154,8 @@ h5 {
   background-position: center;
   background-size: cover;
 } */
+.description {
+  max-height: 100px; /* Adatta l'altezza massima secondo le tue esigenze */
+  overflow-y: auto;
+  margin: 10px 0; /* Opzionale: aggiunge un po' di margine sopra e sotto la descrizione */
+}

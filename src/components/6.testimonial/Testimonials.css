@@ -159,19 +159,3 @@ h5 {
   overflow-y: auto;
   margin: 10px 0; /* Opzionale: aggiunge un po' di margine sopra e sotto la descrizione */
 }
-/* Targets the scrollbar track (background) */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Light grey background */
-}
-
-/* Targets the scrollbar thumb (the draggable element) */
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
-  border-radius: 10px; /* Rounded corners */
-}
-
-/* Targets the scrollbar itself (width and height) */
-::-webkit-scrollbar {
-  width: 8px; /* Width of the vertical scrollbar */
-  height: 8px; /* Height of the horizontal scrollbar */
-}

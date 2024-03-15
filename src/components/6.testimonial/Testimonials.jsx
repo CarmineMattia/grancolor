@@ -90,11 +90,7 @@ export default class Testimonials extends Component {
             </div>
           ))}
         </Carousel>
-        <img
-          src="..\grancolor\myapp\src\assets"
-          alt="Google"
-          className="google-logo"
-        />{" "}
+        <p>Google</p>
       </Box>
     );
   }
